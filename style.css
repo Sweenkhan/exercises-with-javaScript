@@ -1,0 +1,20 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.block-wall{
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+}
+
+.block {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    border:  1px solid black;
+}
+
+ 

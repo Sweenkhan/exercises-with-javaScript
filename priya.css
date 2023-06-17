@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  
+.list { 
+    border: 1px solid;
+    border-radius: 50px;
+    width: 70px;
+    height: 250px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 20px; 
+    position: relative;
+}
+ 
+.red:hover, .green:hover, .blue:hover, .aqua:hover, .yellow:hover {
+    text-align: center;
+    padding-top: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    color: white; 
+}
+ 
+.red:hover{
+    background-color: rgb(255, 0, 55);
+}
+
+.green:hover{
+    background-color: green;
+}
+
+.blue:hover{
+    background-color: blue;
+}
+
+.aqua:hover{
+    background-color:   aqua
+}
+
+.yellow:hover{
+    background-color: yellow;
+}
+ 
+.red::after, .green::after, .blue::after, .aqua::after, .yellow::after{
+    position: absolute;
+    right: -100px;
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+    text-align: center;
+    opacity: 0;
+}
+
+.red::after {
+    content: "Home";
+    background-color: rgb(255, 0, 55);
+}
+
+.blue::after {
+    content: "Contact";
+    background-color: blue;
+}
+
+.green::after {
+    content: "Massage";
+    background-color: green;
+}
+ 
+.aqua::after {
+    content: "Help";
+    background-color: aqua;
+}
+
+.yellow::after {
+    content: "Setting";
+    background-color: yellow;
+}
+
+.red:hover::after, .green:hover::after, .blue:hover::after, .aqua:hover::after, .yellow:hover::after {
+   opacity: 0.9;
+}
+ 
