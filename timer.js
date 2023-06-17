@@ -16,6 +16,8 @@ let stoping = false
 
 let runningTime = function() {
      setInterval(() => {
+
+         
         if(secondTime === 60) {
             minutesDiv.innerHTML = minutesTime
             minutesTime++
@@ -26,13 +28,14 @@ let runningTime = function() {
             minutesTime = 0
             secondTime = 0
         }
-        else {
-            secondsDiv.innerHTML = secondTime++
+        else { 
+            secondsDiv.innerHTML = (stoping) ? secondTime : secondTime++
             console.log(secondTime)
+             
         }
          
         
-    }, (stoping) ? time : time++ )
+    }, time++)
 }
 
 
@@ -54,8 +57,9 @@ startBtn.addEventListener("click", () => {
 
 stopBtn.addEventListener("click", () => {
      
+    console.log("hi")
     return stoping = true
-      
+       
 })
 
   
