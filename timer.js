@@ -53,6 +53,12 @@ let runningTime = function() {
 
 startBtn.addEventListener("click", () => { 
     runningTime ()
+
+    if(stoping === false) {
+        stoping = true
+    }
+
+    stoping = false
 })
 
 stopBtn.addEventListener("click", () => {
