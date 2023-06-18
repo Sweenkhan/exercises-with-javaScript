@@ -1,71 +1,63 @@
-let startBtn = document.querySelector(".start")
-let stopBtn = document.querySelector(".stop")
-let resetBtn = document.querySelector(".reset")
+let startBtn = document.querySelector(".start");
+let stopBtn = document.querySelector(".stop");
+let resetBtn = document.querySelector(".reset");
+ 
 
-let hoursDiv = document.querySelector(".hours")
-let minutesDiv = document.querySelector(".minutes")
-let secondsDiv = document.querySelector(".seconds")
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
+let timeRunning;
 
-let time = 1000;
+let stoping = false;
 
-let secondTime = 1;
-let minutesTime = 1;
-let hoursTime = 1
-let stoping = false
+let showTime = document.querySelector(".showCnt");
 
+ 
+startBtn.addEventListener("click", ()=>{
+   stoping = true
+   timeRunning = setInterval(() => {
+          if(seconds == 60){
+           minutes++
+            seconds = 0
 
-let runningTime = function() {
-     setInterval(() => {
+              if(minutes == 60) {
+                 hours++
+                 minutes = 0;
+                 seconds = 0;
+               }
+
+          } else if (seconds < 10 ){ 
+              seconds = "0" + seconds++;
+               
+               
+          }  else {
+            console.log("hello else")
+          }
+
 
          
-        if(secondTime === 60) {
-            minutesDiv.innerHTML = minutesTime
-            minutesTime++
-            secondTime = 0
-        } else if (minutesTime === 60) {
-            hoursDiv.innerHTML = hoursTime
-            hoursTime++
-            minutesTime = 0
-            secondTime = 0
-        }
-        else { 
-            secondsDiv.innerHTML = (stoping) ? secondTime : secondTime++
-            console.log(secondTime)
-             
-        }
+          showTime.innerHTML = "0" + hours + ":0" + minutes + ":" + seconds 
+          seconds++
          
-        
-    }, time++)
-}
-
-
-// let stopTime = function() {
-    
-//    return stoping = true
-//    console.log(stoping)
-    
-// }
-
-
-
-
-
-
-startBtn.addEventListener("click", () => { 
-    runningTime ()
-
-    if(stoping === false) {
-        stoping = true
-    }
-
-    stoping = false
+   },1000)
+   
 })
 
-stopBtn.addEventListener("click", () => {
-     
-    console.log("hi")
-    return stoping = true
-       
+
+
+stopBtn.addEventListener("click", () => { 
+   clearInterval(timeRunning)
 })
 
-  
+
+
+resetBtn.addEventListener("click", () => {
+  seconds = 0;
+  minutes = 0;
+  hours = 0; 
+  showTime.innerHTML = "0" + hours + ":0" + minutes + ":0" + seconds
+ 
+})
+
+ 
+showTime.innerHTML = "0" + hours + ":0" + minutes + ":0" + seconds

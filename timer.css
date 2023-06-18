@@ -14,32 +14,31 @@ body{
 
 }
 
-.showCnt, .btns {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-}
+ 
+
+
 
 .showCnt {
     height: 120px;
-    width: 400px;
-     
-}
-
-.showCnt div{
-    height: 100px;
-    width: 120px;
+    width: 200px;
     background-color: rgb(23, 25, 27);
     color: white;
-    border-radius: 5%;
+    border-radius: 5px;
+    display: flex;
+    font-size: 2rem;
+     justify-content: center;
+     align-items: center;
+}
+ 
+.btns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    height: 150px;
+  width: 500px;
 }
 
- .btns {
-  height: 150px;
-  width: 500px;
- }
-
+  
  .btns button {
     height: 50px;
     width: 150px;
