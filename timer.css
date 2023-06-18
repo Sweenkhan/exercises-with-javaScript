@@ -11,15 +11,22 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    /* background-color: aqua; */
 }
 
- 
+ .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: aqua;
+    border-radius: 10px;
+ }
 
 
 
 .showCnt {
-    height: 120px;
+    height: 80px;
     width: 200px;
     background-color: rgb(23, 25, 27);
     color: white;
@@ -40,9 +47,9 @@ body{
 
   
  .btns button {
-    height: 50px;
-    width: 150px;
-    font-size: 1.5rem;
+    height: 40px;
+    width: 130px;
+    font-size: 1.3rem;
     cursor: pointer;
     border-radius: 8px;
  }
