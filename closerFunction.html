@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closer Function</title>
+</head>
+
+<body>
+
+
+    <script>
+        function createCloser() {
+
+            let count = 0;
+            if (count < 3) {
+                count++
+                function check() {
+
+                    console.log("this function has been called " + count + "times")
+                }
+                check()
+                 
+            }
+            
+        } 
+        console.log(createCloser())
+    </script>
+</body>
+
+</html>

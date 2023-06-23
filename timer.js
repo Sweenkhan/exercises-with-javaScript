@@ -14,11 +14,18 @@ let showTime = document.querySelector(".showCnt");
 
  
 startBtn.addEventListener("click", ()=>{
-   stoping = true
+
+   stopBtn.style.opacity = "0.5"
+   resetBtn.style.opacity = "0.5"
+   startBtn.style.opacity = "1"
+   // stoping = true
    timeRunning = setInterval(() => {
           if(seconds == 60){
-           minutes++
-            seconds = 0
+            
+             minutes++
+              seconds = 0
+           
+           
 
               if(minutes == 60) {
                  hours++
@@ -47,6 +54,9 @@ startBtn.addEventListener("click", ()=>{
 
 stopBtn.addEventListener("click", () => { 
    clearInterval(timeRunning)
+   resetBtn.style.opacity = "0.5"
+   startBtn.style.opacity = "0.5"
+   stopBtn.style.opacity = "1"
 })
 
 
@@ -56,6 +66,10 @@ resetBtn.addEventListener("click", () => {
   minutes = 0;
   hours = 0; 
   showTime.innerHTML = "0" + hours + ":0" + minutes + ":0" + seconds
+
+  stopBtn.style.opacity = "0.5"
+   startBtn.style.opacity = "0.5"
+   resetBtn.style.opacity = "1"
  
 })
 
