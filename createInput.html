@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an input onclick</title>
+</head>
+<body>
+    
+
+    <h2 onclick=handleClick()>write your name</h2>
+    <input type="file" />
+
+    <script>
+      let modified =   document.querySelector("h2")
+
+      let input = document.createElement("input")
+
+       function handleClick(){
+        let data = modified.innerText
+        modified.innerHTML = ""
+        input.value = data
+        modified.appendChild(input)
+        const locat = window.location.origin
+        console.log(locat) 
+      } 
+
+
+     window.addEventListener("onblur", ()=>{
+         let data = input.value
+         modified.innerHTML = data
+         modified.removeChild(input)
+         
+      })
+  
+ 
+ 
+    </script>
+</body>
+</html>
