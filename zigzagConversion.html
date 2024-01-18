@@ -1,0 +1,44 @@
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zigzag Conversion</title>
+ </head>
+ <body>
+    
+    <script>
+        
+        let numRows = 4
+        let string = "ABCDEFGHIJKLM";
+
+        function zigZag(str){
+            let splitArr =  str.split("")
+
+            let first = ""
+            let second = ""
+            let third = ""
+            let forth = ""
+
+            for(let i = 0; i < splitArr.length; i++){
+                       if(i % 6 === 0 || i === 0){
+                         first += splitArr[i];
+                       } else if(i % 3 === 0){
+                         forth += splitArr[i]
+                       }else if(i % 2 != 0 ){
+                         second += splitArr[i]
+                       } else{
+                        third += splitArr[i]
+                       }
+                    
+            }
+            
+            let result = first+second+third+forth
+ 
+            return result
+        }
+
+        console.log(zigZag(string))
+
+    </script>
+ </body>
+ </html>
